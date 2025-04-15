@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /*Complete here*/
+}
+
+input{ 
+    /*Input field style*/
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+}
+
+
+/*apply the appropriate style for each part of the page*/
+
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+<!--Ghala Alsowiyeh - 442013832-->
+    <!--CSS--------------------------------------------------------------------------------------------------------------->
+    <style>
+        body{
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            background-size: 100%;
+
+        }
+        .main{
+            margin: 100px;
+            width: 500px;
+            height: 550px;
+            padding: 30px ;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        h1{
+            align-items: center;
+        }
+
+        .first{
+            background-color: white;
+            opacity: 0.8;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 5px;
+            width: 500px;
+            
+        }
+
+        #mybutton{
+            background-color: cadetblue;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+
+        }
+
+        input{
+            width: 100%;
+            height: 40px;
+            align-items: center;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <!--HTML ---------------------------------------------------------------------------------------------------------------------------------------->
+<div class="main">
+    <div class="first">
+        <form class="info">
+            <h1> Body Mass(BMI) Calculator </h1>
+            <p>Your Height (cm)</p>
+            <input type="text" id="height" placeholder="Enter your height in cm">
+            <p></p>
+            <p>Your Weight(kg)</p>
+            <input type="text" id="weight" placeholder="Enter your Your Weight in kg">
+            <p></p>
+            <p><input onclick="BMIcalc()" type="button" value="Compute BMI" id="mybutton"></p>
+
+            <p></p>
+            <P id="result"><input type="text" ></P>
+
+            <p></p>
+
+            <h4 id="cond">Weight Condition: </h4>
+        
+        </form>
+        
+    </div>
+</div>
+
+<!--JS----------------------------------------------------------------------------------------------------------------------------->
+
+    <script>
+
+        function BMIcalc(){
+    //Get data
+    var Height = document.getElementById("height").value;
+    var Weight = document.getElementById("weight").value;
+
+    //Alert
+    if(Height == '' ){
+        alert ("Please enter your height");
+        return;
+    }
+    if(Weight == ''){
+        alert ("Please enter your weight ");
+        return;
+    }
+
+    var BMI = ((Weight) / ((Height/100) * (Height/100)));
+
+    document.getElementById("result").innerHTML = BMI;
+
+    var Underweight = "Underweight";
+    var Normalweight = "Normal weight";
+    var Overweight = "Overweight";
+    var Obesity = "Obesity";
+
+
+
+    if(BMI < 18.5){
+        return document.getElementById("cond").innerHTML = Underweight 
+    }
+    if( BMI < 24.9 & BMI > 18.5){
+        return document.getElementById("cond").innerHTML = Normalweight
+    }
+    if(BMI < 29.9 & BMI > 25){
+        return document.getElementById("cond").innerHTML = Overweight
+    }
+    if(BMI = 30 & BMI > 30){
+        return document.getElementById("cond").innerHTML = Obesity
+    }
+}
+    </script>
+
+</body>
+
+</html>
